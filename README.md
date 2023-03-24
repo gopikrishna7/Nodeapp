@@ -1,4 +1,4 @@
-What I have added in this ?
+What I have added in this repo?
 - Modified **app.js** and **.env.example** files, instead of passing MongoDB URI , 
   I have passed the username,password,host,port and DB separately so that we can separate these as kubernetes ConfigMap and Secrets.
 - Added **Jenkinsfile** for End to end CI
@@ -6,6 +6,7 @@ What I have added in this ?
 - Added Kubernetes folder contains k8s manifest files.
 - helm folder added.
 - added argo-application.yaml file
+---------------------------------------------------------------------------------------------
 
 
 **Task1:**

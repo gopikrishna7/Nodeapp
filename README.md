@@ -70,7 +70,7 @@ kubectl get deployment
 **Task5:**
 
 Created the helm chart for the node app, used mongodb as dependency chart for that.
-we can simply deploy this chart , with out configuring any mongodb server.
+For our application up and running simply install this chart.
 
 created the **argo-application.yaml** file , with help of this declarative file we can deploy the helm chart in kubernetes cluster using ArgoCd.
 

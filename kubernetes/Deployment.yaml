@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: gopikrishna99899/mynodeapp
+        env:
+          - name: MONGODB_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-config
+                key: MONGODB_HOST
+          - name: MONGODB_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-config
+                key: MONGODB_PORT
+          - name: MONGODB_DB
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-config
+                key: MONGODB_DB
+          - name: MONGODB_USER
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-config
+                key: MONGODB_USER
+          - name: MONGODB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: MONGODB_PASS
+        ports:
+        - containerPort: 8080

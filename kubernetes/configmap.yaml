@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-config
+data:
+  # MONGODB_URI: mongodb://krishna:krishna7@43.204.28.145:27017/test
+  MONGODB_HOST: "43.204.28.145"
+  MONGODB_PORT: "27017"
+  MONGODB_DB: "test"
+  MONGODB_USER: "krishna"

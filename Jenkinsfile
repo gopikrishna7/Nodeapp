@@ -58,9 +58,15 @@ pipeline{
         //     }
         // }
         stage("version"){
-            def packageJSON = readJSON file: 'package.json'
-            def packageJSONVersion = packageJSON.version
-            echo packageJSONVersion
+            steps{
+                script{
+                    def packageJSON = readJSON file: 'package.json'
+                    def packageJSONVersion = packageJSON.version
+                    echo packageJSONVersion
+
+                }
+            }
+            
 
         }
         // stage("KubernetesDeploy"){

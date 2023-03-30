@@ -57,6 +57,12 @@ pipeline{
         //         sh "docker push gopikrishna99899/mynodeimg"
         //     }
         // }
+        stage('version'){
+            def packageJSON = readJSON file: 'package.json'
+            def packageJSONVersion = packageJSON.version
+            echo packageJSONVersion
+
+        }
         stage("KubernetesDeploy"){
             steps{
                 script{

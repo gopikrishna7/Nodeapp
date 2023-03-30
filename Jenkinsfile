@@ -63,19 +63,19 @@ pipeline{
             echo packageJSONVersion
 
         }
-        stage("KubernetesDeploy"){
-            steps{
-                script{
-                    def manifest = readFile('kubernetes/Deployment.yaml')
-                    manifest = manifest.replaceAll('image:.*', "image: gopikrishna99899/mynodeimg")
-                    // sh "echo '${manifest}' | kubectl apply -f -"
-                    //sh "echo '${manifest}' > kubernetes/Deployment.yaml"
-                    sh "helm install myapp helm"
+        // stage("KubernetesDeploy"){
+        //     steps{
+        //         script{
+        //             def manifest = readFile('kubernetes/Deployment.yaml')
+        //             manifest = manifest.replaceAll('image:.*', "image: gopikrishna99899/mynodeimg")
+        //             // sh "echo '${manifest}' | kubectl apply -f -"
+        //             //sh "echo '${manifest}' > kubernetes/Deployment.yaml"
+        //             sh "helm install myapp helm"
 
-                }
-                // sh "kubectl apply -f kubernetes"
-            }
-        }
+        //         }
+        //         // sh "kubectl apply -f kubernetes"
+        //     }
+        // }
     }
     // post{
     //     always{

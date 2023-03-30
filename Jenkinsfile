@@ -57,18 +57,18 @@ pipeline{
                 sh "docker push gopikrishna99899/mynodeimg"
             }
         }
-        stage("KubernetesDeploy"){
-            steps{
-                script{
-                    def manifest = readFile('kubernetes/Deployment.yaml')
-                    manifest = manifest.replaceAll('image:.*', "image: gopikrishna99899/mynodeimg")
-                     sh "echo '${manifest}' | kubectl apply -f -"
-                    //sh "echo '${manifest}' > kubernetes/Deployment.yaml"
+        // stage("KubernetesDeploy"){
+        //     steps{
+        //         script{
+        //             def manifest = readFile('kubernetes/Deployment.yaml')
+        //             manifest = manifest.replaceAll('image:.*', "image: gopikrishna99899/mynodeimg")
+        //              sh "echo '${manifest}' | kubectl apply -f -"
+        //             //sh "echo '${manifest}' > kubernetes/Deployment.yaml"
 
-                }
-                // sh "kubectl apply -f kubernetes"
-            }
-        }
+        //         }
+        //         // sh "kubectl apply -f kubernetes"
+        //     }
+        // }
     }
     post{
         always{

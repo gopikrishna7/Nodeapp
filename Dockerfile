@@ -1,4 +1,4 @@
-FROM node:12-slim
+FROM node:21.7.0-bookworm-slim
 
 WORKDIR /starter
 ENV NODE_ENV development
